@@ -1,0 +1,111 @@
+//css.css 내용
+body{
+	cursor: default;
+}
+header{
+	animation-name: header-show;
+    animation-duration: 1s;
+}
+main{
+
+}
+footer{
+
+}
+#login{
+	@width:270px;
+	position: absolute;
+	top:30%;
+	left:50%;
+	width:@width;
+	margin-left: -@width/2;
+	overflow: hidden;
+
+	animation-name: login-show;
+    //animation-iteration-count: 1;
+    //animation-timing-function: ease-out;
+    animation-duration: 0.4s;
+	//animation-fill-mode: forwards;
+
+	.input-control{
+		display: block;
+		
+	}
+	#signin_button{
+		float: right;
+	}
+}
+@keyframes login-show{
+	0%{
+		top:0px;
+		opacity: 0;
+	}
+	100%{
+	}
+}
+@keyframes header-show{
+	from{
+		opacity: :0;
+	}
+}
+@keyframes list-show{
+	from{
+		opacity: :0;
+		margin-left: -200px;
+	}
+}
+#prob_detail{
+	display: none;
+	z-index: 1050;
+	.container{
+		width:600px;
+		.auth{
+			text-align: right;
+		}
+		.right{
+			float: right;
+			.solved_person{
+				display: inline-block;
+				max-width: 100px;
+				overflow: hidden;
+				text-overflow:ellipsis;
+				white-space: nowrap;
+			}
+			.solved_count{
+
+			}
+		}
+	}
+}
+.dialog-overlay{
+	opacity: 0.5;
+}
+.solve_mark{
+	display: none;
+	position: absolute;
+	left: 30px;
+	font-size: 24px;
+	color:white;
+	font-weight: bold;
+	transform:rotateZ(-30deg);
+	z-index: 1000;
+}
+.prob_container{
+	margin-bottom: 10px;
+	padding:10px;
+	animation-name: list-show;
+    animation-duration: 1s;
+    .prob{
+    	overflow: hidden;
+    	&.solved{
+			background-color: purple;
+			.solve_mark{
+				display: block;		
+			}
+	    }
+	    .score{
+			font-size: 24px;
+			text-align: center;
+		}
+    }
+}
